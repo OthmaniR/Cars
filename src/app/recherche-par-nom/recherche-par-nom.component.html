@@ -1,0 +1,25 @@
+<div class="container">
+
+    <label> Search With Car Name : </label> <br>
+    <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)" >
+    </div>
+    <div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+        <tr> <th>Id</th><th>Name</th> <th>Price</th> <th>Creation Date</th><th>Type</th> </tr>
+    
+    <tbody *ngFor="let car of cars">
+    <tr >
+    <td>{{car.carId}}</td>
+    <td>{{car.carName}}</td>
+    <td>{{car.carPrice}}</td>
+    <td>{{car.creationDate | date:'dd/MM/yyyy'}}</td>
+    <td>{{car.type.typeName}}</td>
+    </tr>
+    </tbody>
+    
+    </table>
+    </div>
+    </div>
+    </div>

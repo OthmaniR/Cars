@@ -1,0 +1,16 @@
+<form>
+    <div v [hidden]="add">
+    <label>Type ID</label>
+    <input type="text" [readonly]="!add"[(ngModel)]="type.typeId" name="idCategorie" class="form-control w-25">
+    </div>
+    <div>
+    <label>Type Name</label>
+    <input type="text" [(ngModel)]="type.typeName" name="nomCategorie" class="form-control"
+    placeholder="Write Type Name ">
+    </div>
+    <div class="mt-2">
+     <button type="submit" [disabled]="!type.typeName" class="btn btn-success"
+    (click)="saveType()" >{{add ? 'Ajouter' : 'Modifier'}}
+</button>
+    </div>
+    </form>
